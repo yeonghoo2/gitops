@@ -20,5 +20,5 @@ spec:
         host: demo-service
         port:
           number: 80
-        subset: blue   
+        subset: green   
       weight: 0

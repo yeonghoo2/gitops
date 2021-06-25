@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: demo-service
+  namespace: dev
+spec:
+  hosts:
+  - demo-service.yeonghoo2.com
+  gateways:
+  - demo-service
+  http:
+  - route:
+    - destination:
+        host: demo-service
+        port:
+          number: 80

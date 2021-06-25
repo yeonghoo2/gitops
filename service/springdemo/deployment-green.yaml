@@ -1,42 +1,42 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: demo-service-green
-#   namespace: dev
-#   labels:
-#     app: demo-service
-#     dev/version: 'ae244f7'
-#     dev/deployment: green
-#   annotations:
-#     configmap.reloader.stakater.com/reload: demo-service-green
-# spec:
-#   selector:
-#     matchLabels:
-#       app: demo-service
-#       dev/deployment: green
-#   template:
-#     metadata:
-#       labels:
-#         app: demo-service
-#         dev/version: 'ae244f7'
-#         dev/deployment: green
-#     spec:
-#       serviceAccountName: demo-service
-#       containers:
-#         - name: demo-service
-#           image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:ae244f7
-#           imagePullPolicy: Always
-#           resources:
-#             limits:
-#               memory: "256Mi"
-#               cpu: "300m"
-#             requests:
-#               memory: "256Mi"
-#               cpu: "300m"
-#           ports:
-#             - containerPort: 8080
-#           envFrom:
-#             - configMapRef:
-#                 name: demo-service-green
-#       nodeSelector:
-#         alpha.eksctl.io/nodegroup-name: worker
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-service-green
+  namespace: dev
+  labels:
+    app: demo-service
+    dev/version: 'ae244f7'
+    dev/deployment: green
+  annotations:
+    configmap.reloader.stakater.com/reload: demo-service-green
+spec:
+  selector:
+    matchLabels:
+      app: demo-service
+      dev/deployment: green
+  template:
+    metadata:
+      labels:
+        app: demo-service
+        dev/version: 'ae244f7'
+        dev/deployment: green
+    spec:
+      serviceAccountName: demo-service
+      containers:
+        - name: demo-service
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:ae244f7
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "300m"
+            requests:
+              memory: "256Mi"
+              cpu: "300m"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: demo-service-green
+      nodeSelector:
+        alpha.eksctl.io/nodegroup-name: worker

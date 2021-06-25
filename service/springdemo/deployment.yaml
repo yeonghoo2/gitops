@@ -27,7 +27,7 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
-          request:
+          requests:
             memory: "128Mi"
             cpu: "500m"
         ports:

@@ -6,9 +6,11 @@ metadata:
   labels:
     app: demo-service
     service: demo-service
+    dev/deployment: blue
 spec:
   selector:
     app: demo-service
+    dev/deployment: blue
   ports:
   - protocol: TCP
     port: 80

@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: gradle-sample
-    dev/version: '1d0982e'
+    dev/version: '695163a'
 spec:
   selector:
     matchLabels:
@@ -14,12 +14,12 @@ spec:
     metadata:
       labels:
         app: gradle-sample
-        dev/version: '1d0982e'
+        dev/version: '695163a'
     spec:
       serviceAccountName: gradle-sample
       containers:
         - name: gradle-sample
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample:1d0982e
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample:695163a
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

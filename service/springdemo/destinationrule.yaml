@@ -14,9 +14,9 @@ spec:
       mode: ISTIO_MUTAL
   host: demo-service
   subsets:
-  - name: blue
+  - name: v1
     labels:
-      dev/deployment: blue
+      version: v1
   - name: green
     labels:
       dev/deployment: green

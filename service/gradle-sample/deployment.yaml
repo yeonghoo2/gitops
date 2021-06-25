@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gradle-sample
+  namespace: dev
+  labels:
+    app: gradle-sample
+    dev/version: '4576f33'
+spec:
+  selector:
+    matchLabels:
+      app: gradle-sample
+  template:
+    metadata:
+      labels:
+        app: gradle-sample
+        dev/version: '4576f33'
+    spec:
+      serviceAccountName: gradle-sample
+      containers:
+        - name: gradle-sample
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+      nodeSelector:
+        alpha.eksctl.io/nodegroup-name: worker

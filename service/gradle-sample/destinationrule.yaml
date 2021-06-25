@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Destination
+metadata:
+  name: gradle-sample-destination
+  namespace: dev
+spec:
+  trafficPolicy:
+    portLevelSettings:
+    - port:
+        number: 80
+      loadbalancer:
+        simple: ROUND_ROBIN
+    tls:
+      mode: ISTIO_MUTAL
+  host: gradle-sample

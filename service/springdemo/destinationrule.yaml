@@ -16,7 +16,7 @@ spec:
   subsets:
   - name: blue
     labels:
-      dev/deployment: blue
+      service: blue
   - name: green
     labels:
-      dev/deployment: green
+      service: green

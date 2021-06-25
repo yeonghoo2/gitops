@@ -15,10 +15,3 @@ spec:
         port:
           number: 80
         subset: blue
-      weight: 100
-    - destination:
-        host: demo-service
-        port:
-          number: 80
-        subset: green   
-      weight: 0

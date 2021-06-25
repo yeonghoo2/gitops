@@ -9,7 +9,8 @@ spec:
   gateways:
   - demo-service
   http:
-  - route:
+  - name: blue
+    route:
     - destination:
         host: demo-service
         port:

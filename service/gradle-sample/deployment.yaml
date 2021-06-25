@@ -21,13 +21,6 @@ spec:
         - name: gradle-sample
           image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample
           imagePullPolicy: Always
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-            requests:
-              memory: "128Mi"
-              cpu: "500m"
           ports:
             - containerPort: 8080
       nodeSelector:

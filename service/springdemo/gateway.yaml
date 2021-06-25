@@ -10,6 +10,6 @@ spec:
   - port:
       number: 80
       name: http
-      porotocol: HTTP
+      protocol: HTTP
     host:
     - spring-demo.yeonghoo2.com

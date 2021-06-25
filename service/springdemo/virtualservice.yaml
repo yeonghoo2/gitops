@@ -9,12 +9,7 @@ spec:
   gateways:
   - demo-service
   http:
-  - match:
-    - uri:
-        prefix: /
-    route:
+  - route:
     - destination:
         host: demo-service
-        port:
-          number: 80
         subset: blue

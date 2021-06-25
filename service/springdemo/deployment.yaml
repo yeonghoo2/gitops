@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: demo-service
-    dev/version: '${RELEASE_VERSION}'
+    dev/version: '4576f33'
   annotations:
     configmap.reloader.stakater.com/reload: demo-service
 spec:
@@ -16,7 +16,7 @@ spec:
     metadata:
       labels:
         app: demo-service
-        dev/version: '18'
+        dev/version: '4576f33'
     spec:
       serviceAccountName: demo-service
       containers:

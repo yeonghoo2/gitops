@@ -11,5 +11,5 @@ spec:
       number: 80
       name: http
       protocol: HTTP
-    host:
+    hosts:
     - spring-demo.yeonghoo2.com

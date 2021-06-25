@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tornado
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tornado
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: tornado
+        version: v1
+    spec:
+      containers:
+      - name: tornado
+        image: hiroakis/tornado-websocket-example
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8888

@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: tornado
+  namespace: dev
+spec:
+  hosts:
+  - "tornado.yeonghoo2.com"
+  gateways:
+  - tornado-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: tornado
+      weight: 100

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tornado
+  namespace: dev
+  labels:
+    app: tornado
+    service: tornado
+spec:
+  ports:
+  - port: 8888
+    name: http
+  selector:
+    app: tornado

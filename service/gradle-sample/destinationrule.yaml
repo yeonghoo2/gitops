@@ -5,8 +5,11 @@ metadata:
   namespace: dev
 spec:
   trafficPolicy:
-    loadBalancer:
-      simple: LEAST_CONN
+    portLevelSettings:
+    - port:
+        number: 80
+      loadbalancer:
+        simple: ROUND_ROBIN
     tls:
       mode: ISTIO_MUTAL
   host: gradle-sample

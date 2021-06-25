@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: demo-service
-    dev/version: '4576f33'
+    dev/version: 'ae244f7'
     dev/deployment: green
   annotations:
     configmap.reloader.stakater.com/reload: demo-service-green
@@ -17,13 +17,13 @@ spec:
     metadata:
       labels:
         app: demo-service
-        dev/version: '4576f33'
+        dev/version: 'ae244f7'
         dev/deployment: green
     spec:
       serviceAccountName: demo-service
       containers:
         - name: demo-service
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:4576f33
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:ae244f7
           imagePullPolicy: Always
           resources:
             limits:

@@ -12,7 +12,7 @@ spec:
   selector:
     matchLabels:
       app: demo-service
-      dev/deployment: blue
+      deployment: blue
   template:
     metadata:
       labels:

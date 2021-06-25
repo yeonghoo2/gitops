@@ -12,4 +12,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - spring-demo.yeonghoo2.com
+    - demo-service.yeonghoo2.com

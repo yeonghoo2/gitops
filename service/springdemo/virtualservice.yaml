@@ -14,4 +14,11 @@ spec:
         host: demo-service
         port:
           number: 80
-        subset: v1
+        subset: blue
+      weight: 100
+    - destination:
+        host: demo-service
+        port:
+          number: 80
+        subset: blue   
+      weight: 0

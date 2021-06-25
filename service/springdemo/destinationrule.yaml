@@ -4,12 +4,15 @@ metadata:
   name: demo-service-destination
   namespace: dev
 spec:
-  host: demo-service
   trafficPolicy:
-    loadBalancer:
-      simple: RANDOM
+    portLevelSettings:
+    - port:
+        number: 80
+      loadbalancer:
+        simple: ROUND_ROBIN
     tls:
       mode: ISTIO_MUTAL
+  host: demo-service
   subsets:
   - name: blue
     labels:

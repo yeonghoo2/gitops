@@ -11,7 +11,7 @@ spec:
   http:
   - route:
     - destination:
-        host: demo-service
+        host: demo-service-destination
         port:
           number: 80
         subset: blue

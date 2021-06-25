@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: demo-service
-    dev/version: '3df17d5'
+    dev/version: '250d0c6'
   annotations:
     configmap.reloader.stakater.com/reload: demo-service
 spec:
@@ -16,12 +16,12 @@ spec:
     metadata:
       labels:
         app: demo-service
-        dev/version: '3df17d5'
+        dev/version: '250d0c6'
     spec:
       serviceAccountName: demo-service
       containers:
         - name: demo-service
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/showcase:3df17d5
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/helloworld:250d0c6
           imagePullPolicy: Always
           resources:
             limits:

@@ -13,3 +13,10 @@ spec:
     tls:
       mode: ISTIO_MUTAL
   host: demo-service
+  subsets:
+  - name: blue
+    labels:
+      dev/deployment: blue
+  - name: green
+    labels:
+      dev/deployment: green

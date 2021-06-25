@@ -1,5 +1,5 @@
 apiVersion: networking.istio.io/v1alpha3
-kind: Destination
+kind: DestinationRule
 metadata:
   name: gradle-sample-destination
   namespace: dev

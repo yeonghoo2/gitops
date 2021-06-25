@@ -21,7 +21,7 @@ spec:
       serviceAccountName: demo-service
       containers:
         - name: demo-service
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/spring-social-showcase:3df17d5
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/showcase:3df17d5
           imagePullPolicy: Always
           resources:
             limits:

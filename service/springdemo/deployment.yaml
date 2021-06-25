@@ -37,7 +37,3 @@ spec:
                 name: demo-service
       nodeSelector:
         alpha.eksctl.io/nodegroup-name: worker
-  metadata:
-    metadata:
-      labels:
-        dev/version: ${RELEASE_VERSION}

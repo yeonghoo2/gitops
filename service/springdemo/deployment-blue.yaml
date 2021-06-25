@@ -6,13 +6,13 @@ metadata:
   labels:
     app: demo-service
     dev/version: '4576f33'
-    dev/deployment: blue
   annotations:
     configmap.reloader.stakater.com/reload: demo-service-blue
 spec:
   selector:
     matchLabels:
       app: demo-service
+      dev/deployment: blue
   template:
     metadata:
       labels:

@@ -6,13 +6,13 @@ metadata:
   labels:
     app: demo-service
     dev/version: 'ae244f7'
-    dev/deployment: green
   annotations:
     configmap.reloader.stakater.com/reload: demo-service-green
 spec:
   selector:
     matchLabels:
       app: demo-service
+      dev/deployment: green
   template:
     metadata:
       labels:

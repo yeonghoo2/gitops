@@ -21,7 +21,7 @@ spec:
       serviceAccountName: demo-service
       containers:
         - name: demo-service
-          image: ${IMAGE}
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:4576f33
           imagePullPolicy: Always
           resources:
             limits:

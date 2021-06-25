@@ -10,7 +10,7 @@ spec:
     name: demo-service
   minxReplicas: 1
   maxReplicas: 2
-  metics:
+  metrics:
   - type: Resource
     resource:
       name: cpu

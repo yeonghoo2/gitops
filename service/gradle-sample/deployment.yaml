@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: gradle-sample
-    dev/version: '4576f33'
+    dev/version: '1d0982e'
 spec:
   selector:
     matchLabels:
@@ -14,12 +14,12 @@ spec:
     metadata:
       labels:
         app: gradle-sample
-        dev/version: '4576f33'
+        dev/version: '1d0982e'
     spec:
       serviceAccountName: gradle-sample
       containers:
         - name: gradle-sample
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample:1d0982e
           imagePullPolicy: Always
           resources:
             limits:

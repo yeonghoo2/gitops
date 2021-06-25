@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 spec:
   hosts:
-  - "tornado.yeonghoo2.com"
+  - tornado.yeonghoo2.com
   gateways:
   - tornado-gateway
   http:

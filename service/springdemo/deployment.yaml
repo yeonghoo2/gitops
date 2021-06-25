@@ -5,7 +5,7 @@ metadata:
   namespace: dev
   labels:
     app: demo-service
-    dev/version: '18'
+    dev/version: '${RELEASE_VERSION}'
   annotations:
     configmap.reloader.stakater.com/reload: demo-service
 spec:
@@ -20,21 +20,24 @@ spec:
     spec:
       serviceAccountName: demo-service
       containers:
-      - name: demo-service
-        image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:19
-        imagePullPolicy: Always
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-          requests:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8080
-        envFrom:
-          - configMapRef:
-              name: demo-service
+        - name: demo-service
+          image: ${IMAGE}
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: demo-service
       nodeSelector:
         alpha.eksctl.io/nodegroup-name: worker
-        
+  metadata:
+    metadata:
+      labels:
+        dev/version: ${RELEASE_VERSION}

@@ -5,18 +5,15 @@ metadata:
   namespace: dev
 spec:
   trafficPolicy:
-    portLevelSettings:
-    - port:
-        number: 80
-      loadbalancer:
-        simple: ROUND_ROBIN
+    loadBalancer:
+      simple: LEAST_CONN
     tls:
-      mode: ISTIO_MUTAL
+      mode: ISTIO_MUTUAL
   host: demo-service
   subsets:
-  - name: v1
+  - name: blue
     labels:
-      version: v1
-  - name: v2
+      dev/deployment: blue
+  - name: green
     labels:
-      version: v2
+      dev/deployment: green

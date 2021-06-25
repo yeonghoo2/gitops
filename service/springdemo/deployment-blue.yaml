@@ -1,41 +1,41 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: demo-service-blue
-  namespace: dev
-  labels:
-    app: demo-service
-    dev/version: '4576f33'
-    version: v1
-  annotations:
-    configmap.reloader.stakater.com/reload: demo-service-blue
-spec:
-  selector:
-    matchLabels:
-      app: demo-service
-  template:
-    metadata:
-      labels:
-        app: demo-service
-        dev/version: '4576f33'
-        version: v1
-    spec:
-      serviceAccountName: demo-service
-      containers:
-        - name: demo-service
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:4576f33
-          imagePullPolicy: Always
-          resources:
-            limits:
-              memory: "256Mi"
-              cpu: "300m"
-            requests:
-              memory: "256Mi"
-              cpu: "300m"
-          ports:
-            - containerPort: 8080
-          envFrom:
-            - configMapRef:
-                name: demo-service-blue
-      nodeSelector:
-        alpha.eksctl.io/nodegroup-name: worker
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: demo-service-blue
+#   namespace: dev
+#   labels:
+#     app: demo-service
+#     dev/version: '4576f33'
+#     dev/deployment: blue
+#   annotations:
+#     configmap.reloader.stakater.com/reload: demo-service-blue
+# spec:
+#   selector:
+#     matchLabels:
+#       app: demo-service
+#   template:
+#     metadata:
+#       labels:
+#         app: demo-service
+#         dev/version: '4576f33'
+#         dev/deployment: blue
+#     spec:
+#       serviceAccountName: demo-service
+#       containers:
+#         - name: demo-service
+#           image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:4576f33
+#           imagePullPolicy: Always
+#           resources:
+#             limits:
+#               memory: "256Mi"
+#               cpu: "300m"
+#             requests:
+#               memory: "256Mi"
+#               cpu: "300m"
+#           ports:
+#             - containerPort: 8080
+#           envFrom:
+#             - configMapRef:
+#                 name: demo-service-blue
+#       nodeSelector:
+#         alpha.eksctl.io/nodegroup-name: worker

@@ -11,5 +11,5 @@ spec:
       loadbalancer:
         simple: ROUND_ROBIN
     tls:
-      mode: ISTIO_MUTAL
+      mode: ISTIO_MUTUAL
   host: gradle-sample

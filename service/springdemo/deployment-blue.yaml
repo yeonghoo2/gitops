@@ -5,7 +5,6 @@ metadata:
   namespace: dev
   labels:
     app: demo-service
-    dev/version: '4576f33'
     dev/deployment: blue
   annotations:
     configmap.reloader.stakater.com/reload: demo-service-blue
@@ -18,7 +17,6 @@ spec:
     metadata:
       labels:
         app: demo-service
-        dev/version: '4576f33'
         dev/deployment: blue
     spec:
       serviceAccountName: demo-service

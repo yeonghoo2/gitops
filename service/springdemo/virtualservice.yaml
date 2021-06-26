@@ -5,11 +5,11 @@ metadata:
   namespace: dev
 spec:
   hosts:
-  - demo-service.yeonghoo2.com
+    - demo-service.yeonghoo2.com
   gateways:
-  - demo-service
+    - demo-service
   http:
-  - route:
-    - destination:
-        host: demo-service
-        subset: green
+    - route:
+        - destination:
+            host: demo-service
+            subset: blue

@@ -4,7 +4,7 @@ metadata:
   name: test-svc-blue
   namespace: dev
   labels:
-    app: test-svc-blue
+    app: test-svc
     dev/version: 'd3eb8b2'
     version: 'd3eb8b2'
     dev/deployment: blue
@@ -14,11 +14,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: test-svc-blue
+      app: test-svc
   template:
     metadata:
       labels:
-        app: test-svc-blue
+        app: test-svc
         dev/version: 'd3eb8b2'
         version: 'd3eb8b2'
         dev/deployment: blue

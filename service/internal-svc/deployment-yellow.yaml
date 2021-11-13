@@ -23,13 +23,13 @@ spec:
         - name: internal-test-svc-yellow
           image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/internal-svc:ba2229d
           imagePullPolicy: Always
-          resources:
-            limits:
-              memory: "256Mi"
-              cpu: "300m"
-            requests:
-              memory: "256Mi"
-              cpu: "300m"
+          # resources:
+          #   limits:
+          #     memory: "256Mi"
+          #     cpu: "300m"
+          #   requests:
+          #     memory: "256Mi"
+          #     cpu: "300m"
           ports:
             - containerPort: 8080
       nodeSelector:

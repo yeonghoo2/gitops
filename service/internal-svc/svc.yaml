@@ -10,8 +10,10 @@ spec:
   selector:
     app: internal-test-svc-red
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-    name: http
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      name: http
   type: ClusterIP
+  select:
+    app: internal-svc-red

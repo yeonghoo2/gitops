@@ -5,8 +5,8 @@ metadata:
   namespace: dev
   labels:
     app: internal-test-svc-red
-    dev/version: '1.0.0.0'
-    version: '1.0.0.0'
+    dev/version: '1.0.0.1'
+    version: '1.0.0.1'
 spec:
   selector:
     matchLabels:
@@ -15,13 +15,13 @@ spec:
     metadata:
       labels:
         app: internal-test-svc-red
-        dev/version: '1.0.0.0'
+        dev/version: '1.0.0.1'
         version: '695163a'
     spec:
       serviceAccountName: internal-test-svc
       containers:
         - name: internal-test-svc-red
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/internal-svc:ba2229d
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/internal-svc:bc459b7
           imagePullPolicy: Always
           # resources:
           #   limits:

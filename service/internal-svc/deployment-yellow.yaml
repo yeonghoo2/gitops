@@ -5,8 +5,8 @@ metadata:
   namespace: dev
   labels:
     app: internal-test-svc-yellow
-    dev/version: '695163a'
-    version: '695163a'
+    dev/version: '1.0.2.1'
+    version: '1.0.2.1'
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
     metadata:
       labels:
         app: internal-test-svc-yellow
-        dev/version: '695163a'
+        dev/version: '1.0.2.1'
         version: '695163a'
     spec:
       serviceAccountName: internal-test-svc

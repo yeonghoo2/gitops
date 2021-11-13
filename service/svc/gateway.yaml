@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: gradle-sample
+  name: svc
   namespace: dev
 spec:
   selector:
@@ -12,4 +12,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - gradle-sample.yeonghoo2.com
+    - svc.yeonghoo2.com

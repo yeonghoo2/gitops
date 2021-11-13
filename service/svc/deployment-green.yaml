@@ -1,29 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-service-green
+  name: svc-green
   namespace: dev
   labels:
-    app: demo-service
+    app: svc
     dev/version: 'ba2229d'
+    version: 'ba2229d'
     dev/deployment: green
   annotations:
-    configmap.reloader.stakater.com/reload: demo-service-green
+    configmap.reloader.stakater.com/reload: svc-green
+    secret.reloader.stakater.com/reload: svc-green
 spec:
   selector:
     matchLabels:
-      app: demo-service
+      app: svc
   template:
     metadata:
       labels:
-        app: demo-service
+        app: svc
         dev/version: 'ba2229d'
+        version: 'ba2229d'
         dev/deployment: green
     spec:
-      serviceAccountName: demo-service
+      serviceAccountName: svc
       containers:
-        - name: demo-service
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/demo-service:ba2229d
+        - name: svc
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/svc:ba2229d
           imagePullPolicy: Always
           resources:
             limits:
@@ -36,6 +39,8 @@ spec:
             - containerPort: 8080
           envFrom:
             - configMapRef:
-                name: demo-service-green
+                name: svc-green
+            - secretRef:
+                name: svc-green                
       nodeSelector:
         alpha.eksctl.io/nodegroup-name: worker

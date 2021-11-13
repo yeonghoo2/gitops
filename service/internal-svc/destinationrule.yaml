@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: demo-service-destination
+  name: internal-svc-destination
   namespace: dev
 spec:
   trafficPolicy:
@@ -9,11 +9,4 @@ spec:
       simple: LEAST_CONN
     tls:
       mode: ISTIO_MUTUAL
-  host: demo-service
-  subsets:
-  - name: blue
-    labels:
-      dev/deployment: blue
-  - name: green
-    labels:
-      dev/deployment: green
+  host: internal-svc

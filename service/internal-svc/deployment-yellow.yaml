@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internal-svc-yellow
+  namespace: dev
+  labels:
+    app: internal-svc-yellow
+    dev/version: '695163a'
+    version: '695163a'
+spec:
+  selector:
+    matchLabels:
+      app: internal-svc-yellow
+  template:
+    metadata:
+      labels:
+        app: internal-svc-yellow
+        dev/version: '695163a'
+        version: '695163a'
+    spec:
+      serviceAccountName: internal-svc-yellow
+      containers:
+        - name: internal-svc-yellow
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/internal-svc:695163a
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      nodeSelector:
+        alpha.eksctl.io/nodegroup-name: worker

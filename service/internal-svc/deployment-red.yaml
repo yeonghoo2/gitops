@@ -1,25 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gradle-sample
+  name: internal-svc-red
   namespace: dev
   labels:
-    app: gradle-sample
+    app: internal-svc-red
     dev/version: '695163a'
+    version: '695163a'
 spec:
   selector:
     matchLabels:
-      app: gradle-sample
+      app: internal-svc-red
   template:
     metadata:
       labels:
-        app: gradle-sample
+        app: internal-svc-red
         dev/version: '695163a'
+        version: '695163a'
     spec:
-      serviceAccountName: gradle-sample
+      serviceAccountName: internal-svc-red
       containers:
-        - name: gradle-sample
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/gradle-sample:695163a
+        - name: internal-svc-red
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/internal-svc:695163a
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

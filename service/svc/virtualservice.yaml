@@ -1,15 +1,15 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: demo-service
+  name: svc
   namespace: dev
 spec:
   hosts:
-    - demo-service.yeonghoo2.com
+    - svc.yeonghoo2.com
   gateways:
-    - demo-service
+    - svc
   http:
     - route:
         - destination:
-            host: demo-service
+            host: svc
             subset: green

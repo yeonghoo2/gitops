@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ineternal-test-svc
+  name: internal-test-svc
   namespace: dev
   labels:
-    app: ineternal-test-svc
-    service: ineternal-test-svc
+    app: internal-test-svc
+    service: internal-test-svc
 spec:
   selector:
-    app: ineternal-test-svc-red
+    app: internal-test-svc-red
   ports:
   - protocol: TCP
     port: 80

@@ -1,0 +1,19 @@
+# kubectl -n <namespace> create serviceaccount jenkins-robot
+# kubectl -n <namespace> create rolebinding jenkins-robot-binding --clusterrole=jenkins --serviceaccount=<namespace>:jenkins-robot
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: jenkins
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - virtualservices
+  - deployments
+  - deployments/scale
+  - services
+  verbs:
+  - get
+  - watch
+  - list

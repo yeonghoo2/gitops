@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: svc-blue
+  name: test-svc-blue
   namespace: dev
   labels:
-    app: svc
+    app: test-svc-blue
     dev/version: 'd3eb8b2'
     version: 'd3eb8b2'
     dev/deployment: blue
   annotations:
-    configmap.reloader.stakater.com/reload: svc-blue
-    secret.reloader.stakater.com/reload: svc-blue
+    configmap.reloader.stakater.com/reload: test-svc-blue
+    secret.reloader.stakater.com/reload: test-svc-blue
 spec:
   selector:
     matchLabels:
-      app: svc
+      app: test-svc-blue
   template:
     metadata:
       labels:
-        app: svc
+        app: test-svc-blue
         dev/version: 'd3eb8b2'
         version: 'd3eb8b2'
         dev/deployment: blue
     spec:
-      serviceAccountName: svc
+      serviceAccountName: test-svc
       containers:
-        - name: svc
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/svc:d3eb8b2
+        - name: test-svc-blue
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/svc:695163a
           imagePullPolicy: Always
           resources:
             limits:
@@ -39,8 +39,8 @@ spec:
             - containerPort: 8080
           envFrom:
             - configMapRef:
-                name: svc-blue
+                name: test-svc-blue
             - secretRef:
-                name: svc-blue    
+                name: test-svc-blue    
       nodeSelector:
         alpha.eksctl.io/nodegroup-name: worker

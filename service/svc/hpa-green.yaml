@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: svc-green
+  name: test-svc-green
   namespace: dev
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: svc-green
+    name: test-svc-green
   minReplicas: 1
   maxReplicas: 2
   metrics:

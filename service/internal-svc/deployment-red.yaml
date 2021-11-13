@@ -1,28 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: internal-svc-red
+  name: internal-test-svc-red
   namespace: dev
   labels:
-    app: internal-svc-red
+    app: internal-test-svc-red
     dev/version: '695163a'
     version: '695163a'
 spec:
   selector:
     matchLabels:
-      app: internal-svc-red
+      app: internal-test-svc-red
   template:
     metadata:
       labels:
-        app: internal-svc-red
+        app: internal-test-svc-red
         dev/version: '695163a'
         version: '695163a'
     spec:
-      serviceAccountName: internal-svc-red
+      serviceAccountName: internal-svc
       containers:
-        - name: internal-svc-red
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/internal-svc:695163a
+        - name: internal-test-svc-red
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/internal-svc:ba2229d
           imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "300m"
+            requests:
+              memory: "256Mi"
+              cpu: "300m"
           ports:
             - containerPort: 8080
       nodeSelector:

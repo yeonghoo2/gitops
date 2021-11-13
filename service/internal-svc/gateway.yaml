@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: internal-svc
+  name: internal-test-svc
   namespace: dev
 spec:
   selector:
@@ -12,4 +12,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - internal-svc.yeonghoo2.com
+    - internal-test-svc.yeonghoo2.com

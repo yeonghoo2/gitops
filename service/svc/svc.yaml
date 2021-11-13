@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc
+  name: test-svc
   namespace: dev
   labels:
-    app: svc
-    service: svc
+    app: test-svc
+    service: test-svc
 spec:
   selector:
-    app: svc
+    app: test-svc
   ports:
   - protocol: TCP
     port: 80

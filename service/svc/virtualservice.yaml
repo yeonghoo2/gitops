@@ -12,4 +12,4 @@ spec:
     - route:
         - destination:
             host: test-svc
-            subset: blue
+            subset: green

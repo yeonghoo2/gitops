@@ -5,8 +5,8 @@ metadata:
   namespace: dev
   labels:
     app: test-svc
-    dev/version: 'd3eb8b2'
-    version: 'd3eb8b2'
+    dev/version: '1.0.0.0'
+    version: '1.0.0.0'
     dev/deployment: blue
   annotations:
     configmap.reloader.stakater.com/reload: test-svc-blue
@@ -19,7 +19,7 @@ spec:
     metadata:
       labels:
         app: test-svc
-        dev/version: 'd3eb8b2'
+        dev/version: '1.0.0.0'
         version: 'd3eb8b2'
         dev/deployment: blue
     spec:
@@ -41,6 +41,6 @@ spec:
             - configMapRef:
                 name: test-svc-blue
             - secretRef:
-                name: test-svc-blue    
+                name: test-svc-blue
       nodeSelector:
         alpha.eksctl.io/nodegroup-name: worker

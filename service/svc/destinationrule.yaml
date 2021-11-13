@@ -6,7 +6,7 @@ metadata:
 spec:
   trafficPolicy:
     loadBalancer:
-      simple: LEAST_CONN
+      simple: ROUND_ROBIN
     tls:
       mode: ISTIO_MUTUAL
   host: test-svc

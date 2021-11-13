@@ -18,7 +18,7 @@ spec:
         dev/version: '695163a'
         version: '695163a'
     spec:
-      serviceAccountName: internal-svc
+      serviceAccountName: internal-test-svc
       containers:
         - name: internal-test-svc-red
           image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/internal-svc:ba2229d

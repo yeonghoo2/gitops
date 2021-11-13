@@ -1,46 +1,46 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: test-svc-green
-#   namespace: dev
-#   labels:
-#     app: test-svc
-#     dev/version: 'd3eb8b2'
-#     version: 'd3eb8b2'
-#     dev/deployment: green
-#   annotations:
-#     configmap.reloader.stakater.com/reload: test-svc-green
-#     secret.reloader.stakater.com/reload: test-svc-green
-# spec:
-#   selector:
-#     matchLabels:
-#       app: test-svc
-#   template:
-#     metadata:
-#       labels:
-#         app: test-svc
-#         dev/version: 'd3eb8b2'
-#         version: 'd3eb8b2'
-#         dev/deployment: green
-#     spec:
-#       serviceAccountName: test-svc
-#       containers:
-#         - name: test-svc-green
-#           image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/svc:695163a
-#           imagePullPolicy: Always
-#           resources:
-#             limits:
-#               memory: "256Mi"
-#               cpu: "300m"
-#             requests:
-#               memory: "256Mi"
-#               cpu: "300m"
-#           ports:
-#             - containerPort: 8080
-#           envFrom:
-#             - configMapRef:
-#                 name: test-svc-green
-#             - secretRef:
-#                 name: test-svc-green    
-#       nodeSelector:
-#         alpha.eksctl.io/nodegroup-name: worker
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-svc-green
+  namespace: dev
+  labels:
+    app: test-svc
+    dev/version: 'd3eb8b2'
+    version: 'd3eb8b2'
+    dev/deployment: green
+  annotations:
+    configmap.reloader.stakater.com/reload: test-svc-green
+    secret.reloader.stakater.com/reload: test-svc-green
+spec:
+  selector:
+    matchLabels:
+      app: test-svc
+  template:
+    metadata:
+      labels:
+        app: test-svc
+        dev/version: 'd3eb8b2'
+        version: 'd3eb8b2'
+        dev/deployment: green
+    spec:
+      serviceAccountName: test-svc
+      containers:
+        - name: test-svc-green
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/svc:695163a
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "300m"
+            requests:
+              memory: "256Mi"
+              cpu: "300m"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: test-svc-green
+            - secretRef:
+                name: test-svc-green    
+      nodeSelector:
+        alpha.eksctl.io/nodegroup-name: worker

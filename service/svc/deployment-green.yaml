@@ -5,8 +5,8 @@ metadata:
   namespace: dev
   labels:
     app: test-svc
-    dev/version: '1.3.3.3'
-    version: '1.3.3.3'
+    dev/version: '2.5.0.0'
+    version: '2.5.0.0'
     dev/deployment: green
   annotations:
     configmap.reloader.stakater.com/reload: test-svc-green
@@ -19,14 +19,14 @@ spec:
     metadata:
       labels:
         app: test-svc
-        dev/version: '1.3.3.3'
+        dev/version: '2.5.0.0'
         version: 'd3eb8b2'
         dev/deployment: green
     spec:
       serviceAccountName: test-svc
       containers:
         - name: test-svc-green
-          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/svc:0678cae
+          image: 093113466774.dkr.ecr.ap-northeast-2.amazonaws.com/test/svc:33aae57
           imagePullPolicy: Always
           resources:
             limits:

@@ -15,5 +15,3 @@ spec:
       targetPort: 8080
       name: http
   type: ClusterIP
-  select:
-    app: internal-svc-yellow

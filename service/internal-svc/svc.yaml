@@ -8,7 +8,7 @@ metadata:
     service: internal-test-svc
 spec:
   selector:
-    app: internal-test-svc-red
+    app: internal-svc-yellow
   ports:
     - protocol: TCP
       port: 80

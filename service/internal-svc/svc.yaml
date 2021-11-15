@@ -16,4 +16,4 @@ spec:
       name: http
   type: ClusterIP
   select:
-    app: internal-svc-red
+    app: internal-svc-yellow
